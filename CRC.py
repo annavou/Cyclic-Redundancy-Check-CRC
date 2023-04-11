@@ -75,10 +75,13 @@ def changeD(Data, BER):
 NotDetected = 0
 FalseData = 0
 Changed = 0
-for i in range(1000):
-    k = 20
+x = input("Give number of messages ")
+y = input("Give number of bits ")
+z = input("Give generator polynomial ")
+for i in range(int(x)):
+    k = int(y)
     BER = 0.001
-    P = "110101"
+    P = str(z)
 
     D = randomBinaryNum(k)
 
@@ -105,9 +108,9 @@ for i in range(1000):
         # αποδέκτη και δεν ανιχνεύονται από το CRC
         NotDetected += 1
 
-print((Changed * 100) / 1000000)
-print((FalseData*100)/1000000)
-print((NotDetected*100)/1000000)
+print("Corrupted Messages: ", Changed)
+print("Error Detected: ", FalseData)
+print("Messages that has not been error detected", NotDetected)
 
 '''D = "101011100"
 P = "11100"
